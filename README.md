@@ -11,7 +11,22 @@ In `konami_code.js`, you'll notice that we've provided very little: well, just a
 const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
 function init() {
-  // your code here
+let index = 0;
+document.addEventListener('keydown', function(e)){
+const key = parseInt(e.which || e.detail);
+if (key === code[index]){
+  index++;
+  
+  if (index=== code.length-1){
+    window.alert('hey stop')
+    index=0;
+  }
+}
+else{
+  index=0;
+}
+}
+, false);
 }
 ```
 
